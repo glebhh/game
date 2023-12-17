@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Квест на выживание</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #story {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    #choices {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Квест на выживание</h1>
+
+  <div id="story">Вы просыпаетесь в темном лесу. Перед вами раздваиваются тропинки.</div>
+
+  <div id="choices">
+    <button onclick="makeChoice(1)">Пойти направо</button>
+    <button onclick="makeChoice(2)">Пойти налево</button>
+  </div>
+
+  <script>
+    let storyElement = document.getElementById("story");
+    let choicesElement = document.getElementById("choices");
+
+    function makeChoice(choice) {
+      if (choice === 1) {
+        // Сценарий для выбора "Пойти направо"
+        storyElement.innerHTML = "Вы встретили мост через реку. Что будете делать?";
+        choicesElement.innerHTML = '<button onclick="makeChoice(3)">Перейти мост</button>' +
+                                   '<button onclick="makeChoice(4)">Обойти мост и пройти вдоль реки</button>';
+      } else if (choice === 2) {
+        // Сценарий для выбора "Пойти налево"
+        storyElement.innerHTML = "Вы видите темную пещеру. Входить в нее?";
+        choicesElement.innerHTML = '<button onclick="makeChoice(5)">Войти в пещеру</button>' +
+                                   '<button onclick="makeChoice(6)">Пройти мимо и искать другой путь</button>';
+      } else if (choice === 3) {
+        // Сценарий для выбора "Перейти мост"
+        storyElement.innerHTML = "Мост оказался ломаным, и вы упали в реку. Выживете ли?";
+        choicesElement.innerHTML = '<button onclick="makeChoice(7)">Попытаться доплыть до берега</button>' +
+                                   '<button onclick="makeChoice(8)">Воспользоваться обломками моста для спасения</button>';
+      } else if (choice === 4  choice === 5  choice === 6) {
+        // Добавьте свои сценарии для выборов 4, 5 и 6
+      } else if (choice === 7 || choice === 8) {
+        // Добавьте свои сценарии для выборов 7 и 8
+      }
+    }
+  </script>
+
+</body>
